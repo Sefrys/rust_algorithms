@@ -113,4 +113,20 @@ mod tests {
     fn three_non_uniq_one_uniq() {
         assert_eq!(3, count_recurring_elems(&vec![3, 1, 4, 1, 2, 2, 4, 4]));
     }
+
+    #[test]
+    fn count_distinct_pairs_1() {
+        let arr = vec![1, 2, 3, 4, 5];
+        let k = 3;
+
+        assert_eq!(2, distinct_pairs(arr, k));
+    }
+
+    #[test]
+    fn count_distinct_pairs_2() {
+        let arr = vec![0, 4, 8, 12, 16, 20];
+        let k = 4;
+
+        assert_eq!(5, distinct_pairs(arr, k));
+    }
 }
