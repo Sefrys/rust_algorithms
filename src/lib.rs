@@ -46,6 +46,25 @@ fn is_balanced(s: &str) -> String {
     "YES".to_string()
 }
 
+pub fn distinct_pairs(vec: Vec<i32>, k: i32) -> i32 {
+    let mut count = 0;
+    let mut left = 0;
+    let mut right = 0;
+
+    while right < vec.len() {
+        if vec[right] - vec[left] == k {
+            count += 1;
+            left += 1;
+            right += 1;
+        } else if vec[right] - vec[left] > k {
+            left += 1;
+        } else {
+            right += 1;
+        }
+    }
+    count
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
